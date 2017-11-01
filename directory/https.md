@@ -53,12 +53,12 @@ HTTP 协议中的内容都是明文传输，HTTPS 的目的是将这些内容加
 
 ## 做个尝试，观察一下真实情况
 
-![curl https://www.taobao.com](../img/https/curl.png)
+![curl https://www.taobao.com](../assets/img/https/curl.png)
 
 ## 抓包结果
 
-![capture1](../img/https/capture1.png)
-![capture2](../img/https/capture2.png)
+![capture1](../assets/img/https/capture1.png)
+![capture2](../assets/img/https/capture2.png)
 
 ### 解释
 
@@ -87,13 +87,13 @@ HTTP 协议中的内容都是明文传输，HTTPS 的目的是将这些内容加
 
 ## 证书
 
-![certificate](../img/https/certificate.png)
+![certificate](../assets/img/https/certificate.png)
 
 ## 优化
 ### TLS False Start
 浏览器在与服务器完成 TLS 握手前，就开始发送请求数据，服务器在收到这些数据后，完成 TLS 握手的同时，开始发送响应数据。
 
-![TLS False Start](../img/https/TLSFalseStart.png)
+![TLS False Start](../assets/img/https/TLSFalseStart.png)
 
 ### Session Identifier（会话标识符）复用
 如果用户的一个业务请求包含了多条的加密流，客户端与服务器将会反复握手，必定会导致更多的时间损耗。或者某些特殊情况导致了对话突然中断，双方就需要重新握手，增加了用户访问时间。
@@ -104,7 +104,7 @@ HTTP 协议中的内容都是明文传输，HTTPS 的目的是将这些内容加
 
 >（3）服务器收到客户端发来的 ID 号，然后查找自己的会话记录，匹配 ID 之后，双方就可以重新使用之前的对称加密秘钥进行数据加密传输，而不必重新生成，减少交互时间。
 
-![session](../img/https/session.png)
+![session](../assets/img/https/session.png)
 
 ### 开启OSCP Stapling，提高TLS握手效率
 
